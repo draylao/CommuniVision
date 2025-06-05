@@ -15,7 +15,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/register")
+    @PostMapping("/register/{organizationId}")
     public ResponseEntity<?> register(@RequestBody Signup req, @PathVariable Integer organizationId) {
         String result = userService.register(req, organizationId);
 
