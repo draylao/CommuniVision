@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
 
-public class WeatherService {
+public class WeatherStationService {
     @Autowired
     private WeatherStationRepository repository;
 

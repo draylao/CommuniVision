@@ -1,7 +1,7 @@
 package com.o4.CommuniVision.controller;
 
 import com.o4.CommuniVision.model.entity.WeatherStationDataset;
-import com.o4.CommuniVision.service.WeatherDatasetService;
+import com.o4.CommuniVision.service.WeatherStationDatasetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.*;
 public class WeatherStationDatasetController {
 
     @Autowired
-    private WeatherDatasetService weatherDatasetService;
+    private WeatherStationDatasetService weatherStationDatasetService;
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody WeatherStationDataset weatherStationDataset) {
-        return ResponseEntity.ok(weatherDatasetService.createWeatherDataset(weatherStationDataset));
+        return ResponseEntity.ok(weatherStationDatasetService.createWeatherDataset(weatherStationDataset));
     }
 
     @GetMapping("/organization/{organizationId}")
     public ResponseEntity<?> getDatasetsByOrganization(@PathVariable Integer organizationId) {
-        return ResponseEntity.ok(weatherDatasetService.getDatasetsByOrganizationId(organizationId));
+        return ResponseEntity.ok(weatherStationDatasetService.getDatasetsByOrganizationId(organizationId));
     }
 
 }
