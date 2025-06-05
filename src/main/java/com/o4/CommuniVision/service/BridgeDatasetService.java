@@ -23,16 +23,16 @@ public class BridgeDatasetService {
         return bridgeDatasetRepository.save(bridgeDataset);
     }
 
-    public BridgeDataset getDatasetById(Integer id) {
-        Optional<BridgeDataset> optionalBridgeDataset = bridgeDatasetRepository.findById(id);
-
-        if (optionalBridgeDataset.isPresent()) {
-            BridgeDataset bridgeDataset = optionalBridgeDataset.get();
-            return bridgeDataset;
-        }
-
-        return null;
-    }
+//    public BridgeDataset getDatasetById(Integer id) {
+//        Optional<BridgeDataset> optionalBridgeDataset = bridgeDatasetRepository.findById(id);
+//
+//        if (optionalBridgeDataset.isPresent()) {
+//            BridgeDataset bridgeDataset = optionalBridgeDataset.get();
+//            return bridgeDataset;
+//        }
+//
+//        return null;
+//    }
 
     public List<BridgeDataset> getDatasetsByOrganization(Integer orgId) {
         return organizationService.getOrganizationById(orgId).getBridgeDatasets();

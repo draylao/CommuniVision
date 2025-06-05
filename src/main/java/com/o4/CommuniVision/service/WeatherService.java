@@ -4,6 +4,8 @@ import com.o4.CommuniVision.model.entity.WeatherStation;
 import com.o4.CommuniVision.repository.WeatherStationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Optional;
+
 public class WeatherService {
     @Autowired
     private WeatherStationRepository repository;
