@@ -10,6 +10,20 @@ public class WeatherService {
     @Autowired
     private WeatherStationRepository repository;
 
-    public WeatherStation(WeatherStation )
+    public WeatherStation createWeatherStation(WeatherStation station){
+        return repository.save(station);
+    }
+
+    public WeatherStation getWeatherStationById(Integer id){
+        Optional<WeatherStation>optionalWeatherStation = repository.findById(id);
+
+        if(optionalWeatherStation.isPresent()){
+            WeatherStation station = optionalWeatherStation.get();
+            return station;
+        }
+        return null;
+    }
+
+
 
 }

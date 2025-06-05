@@ -21,6 +21,14 @@ public class BridgeDatasetController {
         return ResponseEntity.ok(bridgeDatasetService.createDataset(bridgeDataset));
     }
 
-    
+//    @GetMapping("/{id}")
+//    public ResponseEntity<?> get(@PathVariable Integer id) {
+//        return ResponseEntity.ok(bridgeDatasetService.getDatasetById(id));
+//    }
+
+    @GetMapping("organization/{organizationId}")
+    public ResponseEntity<?> getDatasetsByOrganization(@PathVariable Integer organizationId) {
+        return ResponseEntity.ok(bridgeDatasetService.getDatasetsByOrganization(organizationId));
+    }
 
 }

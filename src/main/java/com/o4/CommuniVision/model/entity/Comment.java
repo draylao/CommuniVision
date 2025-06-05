@@ -6,16 +6,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "posts")
 @Data
-@NoArgsConstructor
+@Table(name = "comments")
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Post {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,15 +23,14 @@ public class Post {
     @Column(name = "author", nullable = false)
     private String author;
 
-    @Column(name = "title", nullable = false)
-    private String title;
-
     @Column(name = "time", nullable = false)
     private LocalDateTime time;
 
     @Column(name = "content", nullable = false)
     private String content;
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Comment> comments;
+    @ManyToOne
+    @JoinColumn(name = "post_id")
+    private Post post;
+
 }
