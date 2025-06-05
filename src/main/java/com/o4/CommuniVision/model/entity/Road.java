@@ -30,7 +30,7 @@ public class Road {
 
     @Column(name = "road_condition", nullable = false)
     @Enumerated(EnumType.STRING)
-    private Condition condition;
+    private Condition road_condition;
 
     @Column(name = "age", nullable = false)
     private int age;
