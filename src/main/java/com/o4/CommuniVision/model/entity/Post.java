@@ -1,4 +1,4 @@
 package com.o4.CommuniVision.model.entity;
 
-public class road {
+public class Post {
 }
