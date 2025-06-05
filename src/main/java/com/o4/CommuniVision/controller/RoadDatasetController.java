@@ -18,10 +18,10 @@ public class RoadDatasetController {
         return ResponseEntity.ok(roadDatasetService.createDataset(roadDataset));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> get(@PathVariable Integer id) {
-        return ResponseEntity.ok(roadDatasetService.getDatasetsByOrganizationId(id));
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<?> get(@PathVariable Integer id) {
+//        return ResponseEntity.ok(roadDatasetService.getDatasetById(id));
+//    }
 
     @GetMapping("organization/{organizationId}")
     public ResponseEntity<?> getDatasetsByOrganization(Integer organizationId) {
