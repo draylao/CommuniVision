@@ -16,9 +16,6 @@ public class BridgeDatasetService {
     @Autowired
     private BridgeDatasetRepository bridgeDatasetRepository;
 
-    @Autowired
-    private OrganizationService organizationService;
-
     public BridgeDataset createDataset(BridgeDataset bridgeDataset) {
         return bridgeDatasetRepository.save(bridgeDataset);
     }
@@ -35,7 +32,7 @@ public class BridgeDatasetService {
 //    }
 
     public List<BridgeDataset> getDatasetsByOrganization(Integer orgId) {
-        return organizationService.getOrganizationById(orgId).getBridgeDatasets();
+        return bridgeDatasetRepository.findByOrganizationId(orgId);
     }
 
 }
