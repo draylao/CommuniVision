@@ -29,4 +29,7 @@ public class Organization {
     @OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RoadDataset> roadDatasets;
 
+    @OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<WeatherStationDataset> weatherStationDatasets;
+
 }
