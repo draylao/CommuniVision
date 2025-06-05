@@ -33,7 +33,7 @@ public class Bridge {
 
     @Column(name = "condition", nullable = false)
     @Enumerated(EnumType.STRING)
-    private Condition condition;
+    private Condition bridge_condition;
 
     @Column(name = "age", nullable = false)
     private int age;
