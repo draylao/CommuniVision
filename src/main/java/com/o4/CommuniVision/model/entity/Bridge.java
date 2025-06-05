@@ -31,9 +31,9 @@ public class Bridge {
     @Column(name = "longitude", nullable = false)
     private double longitude;
 
-    @Column(name = "condition", nullable = false)
     @Enumerated(EnumType.STRING)
-    private Condition bridge_condition;
+    @Column(name = "bridge_condition", nullable = false)
+    private Condition condition;
 
     @Column(name = "age", nullable = false)
     private int age;
@@ -41,7 +41,7 @@ public class Bridge {
     @Column(name = "region", nullable = false)
     private String region;
 
-    @Column(name = "traffic")
+    @Column(name = "traffic", nullable = false)
     private int traffic;
 
     @ManyToOne(cascade = CascadeType.ALL)

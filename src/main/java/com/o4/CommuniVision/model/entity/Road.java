@@ -28,7 +28,7 @@ public class Road {
     @Column(name = "longitude", nullable = false)
     private double longitude;
 
-    @Column(name = "condition", nullable = false)
+    @Column(name = "road_condition", nullable = false)
     @Enumerated(EnumType.STRING)
     private Condition road_condition;
 

@@ -21,8 +21,8 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "author", nullable = false)
-    private String author;
+//    @Column(name = "author", nullable = false)
+//    private String author;
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -35,4 +35,8 @@ public class Post {
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }
