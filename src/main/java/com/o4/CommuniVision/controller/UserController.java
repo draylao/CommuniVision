@@ -26,7 +26,7 @@ public class UserController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/organizations/{organizationId}")
     public List<User> getUsersByOrganization(@PathVariable Integer organizationId) {
         return userService.getUsersByOrganization(organizationId);
     }
